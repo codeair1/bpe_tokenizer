@@ -34,11 +34,35 @@ def encode(text):
         ids = merge(ids,pair,idx)   #merging the pairs of byte into a single byte
         merges[pair] = idx  #noting the byte value stored at pair's position
         idx =idx+1
+    return ids,merges         #return the new token and changes made in it stored in merges
+
+
+def decode(ids,merges):
+    for pair in reversed(merges):           #iterating through all merges completed during encoding in reverse order
+        new_ids = []
+        last_token = merges[pair]  #getting the last token
+        i=0
+        while i<len(ids):              #checking all bytes to find the token to convert to the pair
+            if ids[i] == last_token:
+                new_ids.extend(pair)  #replacing the token with pair
+                i=i+1
+            else:
+                new_ids.append(ids[i])  #putting back the byte in place
+                i=i+1
+        ids = new_ids
     return ids
+
 def main():
     text = 'hello this is a testttt'
 
-    encoded_ids=encode(text)
+    encoded_ids,merges=encode(text)
     if len(encoded_ids)< len(text): print('encoded text successfully')
     else: print('failed')
+
+    decoded_ids=decode(encoded_ids,merges)
+    if list(map(int,text.encode('utf-8'))) == decoded_ids: print('decoding completed successfully')
+    else: print('error')
+
+
+
 main()

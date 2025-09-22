@@ -3,7 +3,7 @@ from pathlib import Path
 
 def main():
     
-    file_path = Path(__file__).parent.parent / 'alice.txt'
+    file_path = Path(__file__).parent.parent / 'test.txt'
     with file_path.open('r') as f:
         text = f.read()  #storing text file contents into text varaible
 

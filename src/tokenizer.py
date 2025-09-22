@@ -51,18 +51,3 @@ def decode(ids,merges):
                 i=i+1
         ids = new_ids
     return ids
-
-def main():
-    text = 'hello this is a testttt'
-
-    encoded_ids,merges=encode(text)
-    if len(encoded_ids)< len(text): print('encoded text successfully')
-    else: print('failed')
-
-    decoded_ids=decode(encoded_ids,merges)
-    if list(map(int,text.encode('utf-8'))) == decoded_ids: print('decoding completed successfully')
-    else: print('error')
-
-
-
-main()

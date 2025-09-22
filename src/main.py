@@ -12,11 +12,11 @@ def main():
 
 
     encoded_ids,merges=encode(text)                                   #encode text into excoded_ids and save changes into merges
-    print(len(encoded_ids))
+    print(f' length of encoded text = {len(encoded_ids)}')
 
 
     decoded_ids=decode(encoded_ids,merges)
-    print(len(decoded_ids))
+    print(f'length of decoded text = {len(decoded_ids)}')
 
 
     if list(map(int,text.encode('utf-8'))) == decoded_ids: print('decoding completed successfully')   #check if message was decoded perfectly

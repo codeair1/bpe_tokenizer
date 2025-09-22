@@ -24,13 +24,14 @@ def main():
 
 
 
-    output_path = Path(__file__).parent.parent / 'output.txt'                #getting path for output.txt
+#remove the triple quotes to write output.txt
+
+ '''   output_path = Path(__file__).parent.parent / 'output.txt'                #getting path for output.txt
     with output_path.open('w') as f:                                         #creating and writing in output.txt
         f.write('\n------------------encoded--------------\n')
         f.write(','.join(map(str, encoded_ids)))                             #storing encoded data
         f.write('\n-----------decoded--------------\n')
-        f.write(','.join(map(str,decoded_ids)))                              #storing decoded data
-
+        f.write(','.join(map(str,decoded_ids)))                              #storing decoded data      '''
 
 
 main()

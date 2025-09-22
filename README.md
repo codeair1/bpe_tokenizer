@@ -1,4 +1,4 @@
-An algorythm to compress text efficiently.
+An algorithm to compress text efficiently.
  It is used to pretrain LLMs including GPT,BART,DeBARTa, and many more.
 
  
